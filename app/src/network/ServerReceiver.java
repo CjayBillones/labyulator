@@ -22,6 +22,8 @@ public class ServerReceiver extends Receiver{
       if(message.equals("/quit")){
         changeConnectionStatus();
       }
+
+      client.conn.sendMessage("Message Received");
     }
   }
 

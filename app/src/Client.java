@@ -5,7 +5,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-public class Client extends Thread{
+public class Client{
 
 	public Socket s;
 	public Connection conn;
@@ -27,12 +27,22 @@ public class Client extends Thread{
 		}
 	}
 
+  public void load(){
+    try{
+      Thread.sleep(1000);
+    }catch(Exception e){
+      System.out.println("Client: An error occurred");
+      e.printStackTrace();
+    }
+  }
+
   public void run(){
 
     int choice;
     String name1, name2;
 
     while(connected){
+      load();
       displayMenu();
 
       System.out.print("Enter Option: ");
@@ -67,8 +77,8 @@ public class Client extends Thread{
   }
 
 	public static void main(String args[]){
-		Thread client = new Client();
-    client.start();
+		Client client = new Client();
+    client.run();
 	}
 
 }
