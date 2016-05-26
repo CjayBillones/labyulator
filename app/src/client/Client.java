@@ -15,10 +15,13 @@ public class Client{
   private InputValidator validator;
   public Connection conn;
 
-	public Client(){
+	public Client(String args[]){
 		try{
-			this.s = new Socket("127.0.0.1", 8888);
-			this.conn = new Connection(s);
+      if(args.length == 0)
+        this.s = new Socket("127.0.0.1", 8888);
+			else
+        this.s = new Socket(args[0], 8888);
+      this.conn = new Connection(s);
       this.connected = true;
       this.sc = new Scanner(System.in);
       this.validator = InputValidator.getInstance();
@@ -100,7 +103,7 @@ public class Client{
   }
 
 	public static void main(String args[]){
-		Client client = new Client();
+		Client client = new Client(args);
     client.run();
 	}
 
