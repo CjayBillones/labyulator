@@ -1,5 +1,6 @@
 package app.src.server;
 
+import app.src.calculator.*;
 import app.src.network.*;
 import java.io.*;
 import java.net.*;
@@ -9,6 +10,7 @@ public class ClientThread extends Thread{
 	private Socket s;
   private Receiver receiver;
   public Connection conn;
+  public Context context;
 
 	public ClientThread(ServerSocket ssocket){
 		try{
