@@ -60,34 +60,41 @@ public class Client{
     return choice;
   }
 
+  public String inputNames(){
+    
+    String inputNames[] = new String[2];
+
+    for(int i = 0; i < inputNames.length; i++){
+      System.out.print("Enter name of person " + i + ": ");
+      inputNames[i] = sc.nextLine();
+    }
+
+    if(!validator.validateNames(inputNames[0], inputNames[1])){
+      System.out.println("ERROR: One or both of the input names is/are invalid.");
+      return null;
+    }
+  
+    return (inputNames[0] + ";" + inputNames[1] + ";");
+  }
+
   public void run(){
 
     int choice;
-    String name1, name2;
+    String inputNames;
 
     while(connected){
       load();
       displayMenu();
       choice = inputChoice();
-
-      if(choice == 3){
-        connected = false;
-        cReceiver.changeConnectionStatus();
-        continue;
-      }
-      
-      System.out.print("Enter your name: ");
-      name1 = sc.nextLine();
-      
-      System.out.print("Enter your beloved's name: ");
-      name2 = sc.nextLine();
-
-      if(!validator.validateNames(name1, name2)){
-        System.out.println("ERROR: One or both of the input names is/are invalid.");
-        continue;
-      }
-
-      this.conn.sendMessage(choice + ";" + name1 + ";" + name2 + ";");
+        if(choice == 3){
+          connected = false;
+          cReceiver.changeConnectionStatus();
+          continue;
+        }
+      inputNames = inputNames();
+        if(inputNames == null)
+          continue;
+      this.conn.sendMessage(choice + ";" + inputNames);
     }
     System.exit(1);
   }
