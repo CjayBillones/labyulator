@@ -2,6 +2,12 @@
 
 LabyuLator is a person compatibility calculator which uses TRUE LOVE or FLAMES's love prediction algorithms. Anyone who uses the app will be able to view the results of the calculations and will help him/her decide if he/she should love you now, or love you later, hence the app name, LabyuLator.
 
+# System Requirements
+1. Java Version: 1.7.0_101 (Runtime Environment)
+2. Javac Version: 1.7.0_101 (Compiler)
+3. JUnit Version: Default JUnit package from Linux or JUnit-3.8.2
+4. Highly preferred to run on Linux environment.
+
 # Instructions
 
 ###### For Linux
@@ -38,4 +44,8 @@ LabyuLator is a person compatibility calculator which uses TRUE LOVE or FLAMES's
     ```shell
     javac -cp /usr/share/java/junit.jar app/src/util/InputValidator.java app/tests/InputValidatorTest.java
     java -cp /usr/share/java/junit.jar:. junit.textui.TestRunner app.tests.InputValidatorTest
+    javac -cp /usr/share/java/junit.jar app/src/calculator/FLAMESCalculator.java app/src/calculator/LoveCalculator.java app/tests/FLAMESCalculatorTest.java
+    java -cp /usr/share/java/junit.jar:. junit.textui.TestRunner app.tests.FLAMESCalculatorTest
+    javac -cp /usr/share/java/junit.jar app/src/calculator/TRUELOVECalculator.java app/src/calculator/LoveCalculator.java app/tests/TRUELOVECalculatorTest.java
+    java -cp /usr/share/java/junit.jar:. junit.textui.TestRunner app.tests.TRUELOVECalculatorTest
     ```
