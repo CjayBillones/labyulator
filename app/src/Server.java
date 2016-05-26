@@ -16,8 +16,8 @@ public class Server{
 				System.out.println("Server: Waiting for connections. . .");
 
 				while(true){
-					SocketThread sg = new SocketThread(ssocket);
-					sg.start();
+					ClientThread client = new ClientThread(ssocket);
+					client.start();
 				}
 
 			}catch(Exception e){

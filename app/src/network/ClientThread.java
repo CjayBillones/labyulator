@@ -3,13 +3,13 @@ package app.src.network;
 import java.io.*;
 import java.net.*;
 
-public class SocketThread extends Thread{
+public class ClientThread extends Thread{
 
 	Socket s;
 	Connection conn;
   Receiver receiver;
 
-	public SocketThread(ServerSocket ssocket){
+	public ClientThread(ServerSocket ssocket){
 		try{
 			this.s = ssocket.accept();
 			this.conn = new Connection(s);

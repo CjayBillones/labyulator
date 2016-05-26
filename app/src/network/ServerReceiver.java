@@ -5,15 +5,15 @@ import java.net.*;
 
 public class ServerReceiver extends Receiver{
 
-  SocketThread sg;
+  ClientThread client;
 
-  public ServerReceiver(SocketThread sg){
-    this.sg = sg;
+  public ServerReceiver(ClientThread client){
+    this.client = client;
   }
 
   public void run(){
     while(connected){
-      String message = sg.conn.getMessage();
+      String message = client.conn.getMessage();
 
       if(message == null || message.length() == 0) continue;
 
