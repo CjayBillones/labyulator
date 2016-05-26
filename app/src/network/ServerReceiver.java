@@ -1,3 +1,5 @@
+package app.src.network;
+
 import java.io.*;
 import java.net.*;
 
@@ -21,7 +23,6 @@ public class ServerReceiver extends Receiver{
         changeConnectionStatus();
       }
     }
-    System.out.println("Killing Thread");
   }
 
 }
