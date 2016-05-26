@@ -7,7 +7,7 @@ public class TRUELOVECalculator implements LoveCalculator{
     int loveSum = count(name1.toLowerCase(), "love") + count(name2.toLowerCase(), "love");
     String result = (trueSum == 0 && loveSum == 0) ? "0" : Integer.toString(trueSum) + Integer.toString(loveSum);
 
-    return result;
+    return result + "%";
   }
 
   private int count(String name, String word){
