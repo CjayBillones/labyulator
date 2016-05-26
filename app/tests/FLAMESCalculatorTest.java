@@ -13,34 +13,60 @@ public class FLAMESCalculatorTest extends TestCase{
     calculator = new FLAMESCalculator();
   }
 
-  public void testOption1IsFRIENDSHIP(){
-    boolean result =  calculator.calculateCompatibility("asd","abcd").equals("FRIENDSHIP");
-    assertTrue(result);
+  public void testOutputFRIENDSHIPIsValid(){
+    String name1 = "asd";
+    String name2 = "abcd";    
+    String result =  calculator.calculateCompatibility(name1, name2);
+    assertEquals("FRIENDSHIP", result);
   }
   
-  public void testOption2IsLOVE(){
-    boolean result =  calculator.calculateCompatibility("MATT","DENISE").equals("LOVE");
-    assertTrue(result);
+  public void testComputeLOVEIsValid(){
+    String name1 = "MATT";
+    String name2 = "DENISE";    
+    String result =  calculator.calculateCompatibility(name1, name2);
+    assertEquals("LOVE", result);
   }
 
-  public void testOption3IsAFFECTION(){
-    boolean result =  calculator.calculateCompatibility("gwen","cjay").equals("AFFECTION");
-    assertTrue(result);
+  public void testComputeAFFECTIONIsValid(){
+    String name1 = "gwen";
+    String name2 = "cjay";    
+    String result =  calculator.calculateCompatibility(name1, name2);
+    assertEquals("AFFECTION", result);
   }
 
-  public void testOption4IsMARRIAGE(){
-    boolean result =  calculator.calculateCompatibility("SHILPA","AMIR").equals("MARRIAGE");
-    assertTrue(result);
+  public void testComputeMARRIAGEIsValid(){
+    String name1 = "SHILPA";
+    String name2 = "AMIR";
+    String result =  calculator.calculateCompatibility(name1, name2);
+    assertEquals("MARRIAGE", result);
   }
 
-  public void testOption5IsENEMY(){
-    boolean result =  calculator.calculateCompatibility("Cjay Billones","Alwin de Leon").equals("ENEMY");
-    assertTrue(result);
+  public void testComputeENEMYIsValid(){
+    String name1 = "Cjay Billones";
+    String name2 = "Alwin de Leon";
+    String result =  calculator.calculateCompatibility(name1,name2);
+    assertEquals("ENEMY", result);
   }
 
-  public void testOption6IsSIBLING(){
-    boolean result =  calculator.calculateCompatibility("putangina walang sibling","yehey").equals("SIBLING");
-    assertTrue(result);
+  public void testComputeSIBLINGIsValid(){
+    String name1 = "oomagulaa walang sibling";
+    String name2 = "yehey";
+    String result =  calculator.calculateCompatibility(name1, name2);
+    assertEquals("SIBLING", result);
   }
-  
+
+  public void testNameWithProperSuffixIsValid(){
+    String name1 = "Ciprian Jr.";
+    String name2 = "Cjay";
+    String result =  calculator.calculateCompatibility(name1, name2);
+    assertEquals("ENEMY", result);
+  }  
+
+  public void testComputeSameNameIsFRIENDSHIP(){
+    String name1 = "Cjay";
+    String name2 = "Cjay";
+    String result = calculator.calculateCompatibility(name1, name2);
+    assertEquals("FRIENDSHIP", result);
+  }
+
 }
