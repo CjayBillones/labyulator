@@ -2,7 +2,7 @@ package app.src.util;
 
 public class InputValidator{
 
-  private final String REGEX = "^[A-Za-z ]+(JR|Jr|jR|jr|SR|Sr|sR|sr)?\\.?$";
+  private final String REGEX = "^[A-Za-z ]+((JR|Jr|jR|jr|SR|Sr|sR|sr)\\.?)?$";
   private static InputValidator instance = new InputValidator();
 
   public static InputValidator getInstance(){
