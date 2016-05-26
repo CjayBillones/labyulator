@@ -14,10 +14,10 @@ public class FLAMESCalculatorTest extends TestCase{
   }
 
   public void testOption1IsFRIENDSHIP(){
-    boolean result =  calculator.calculateCompatibility("abcd","asd").equals("FRIENDSHIP");
+    boolean result =  calculator.calculateCompatibility("asd","abcd").equals("FRIENDSHIP");
     assertTrue(result);
   }
-
+  
   public void testOption2IsLOVE(){
     boolean result =  calculator.calculateCompatibility("MATT","DENISE").equals("LOVE");
     assertTrue(result);
@@ -42,4 +42,5 @@ public class FLAMESCalculatorTest extends TestCase{
     boolean result =  calculator.calculateCompatibility("putangina walang sibling","yehey").equals("SIBLING");
     assertTrue(result);
   }
+  
 }
