@@ -16,9 +16,11 @@ LabyuLator is a person compatibility calculator which uses TRUE LOVE or FLAMES's
 2. Compile the project by typing the following code in the terminal:
 
     ```shell
+    javac app/src/calculator/*.java
     javac app/src/network/*.java
-    javac app/src/*.java
+    javac app/src/server/*.java
+    javac app/src/client/*.java
     ```
 
-3. Run the server by typing `java app.src.Server` in the terminal
-4. Run the client by typing `java app.src.Client` in the terminal
+3. Run the server by typing `java app.src.server.Server` in the terminal
+4. Run the client by typing `java app.src.client.Client` in the terminal
