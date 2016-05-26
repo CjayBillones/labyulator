@@ -11,7 +11,6 @@ LabyuLator is a person compatibility calculator which uses TRUE LOVE or FLAMES's
 4. Run the client by typing `./run-client.sh` in the terminal.
 
 ###### Manual Compilation and Running
-
 1. Go inside the project directory named **labyulator**.
 2. Compile the project by typing the following code in the terminal:
 
@@ -25,3 +24,18 @@ LabyuLator is a person compatibility calculator which uses TRUE LOVE or FLAMES's
 
 3. Run the server by typing `java app.src.server.Server` in the terminal
 4. Run the client by typing `java app.src.client.Client` in the terminal
+
+# Testing
+
+###### For Linux
+1. Go inside the project directory named **labyulator**
+2. Run the tests by typing `./run-test.sh` in the terminal.
+
+###### Manual Compilation and Running of Tests
+1. Go inside the project directory named **labyulator**
+2. Compile and run the tests by typing the following code in the terminal:
+
+    ```shell
+    javac -cp /usr/share/java/junit.jar app/src/util/InputValidator.java app/tests/InputValidatorTest.java
+    java -cp /usr/share/java/junit.jar:. junit.textui.TestRunner app.tests.InputValidatorTest
+    ```
