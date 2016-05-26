@@ -25,7 +25,7 @@ public class TRUELOVECalculator implements LoveCalculator{
             }
         }
     }
-    for( i = 0; i < name1.length(); i++){
+    for( i = 0; i < name2.length(); i++){
         for( j = 0 ; j < arr.length ; j++){
             if(name2.charAt(i) == arr[j]){
                 sum++;
