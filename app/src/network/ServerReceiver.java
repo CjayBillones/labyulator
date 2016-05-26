@@ -1,11 +1,12 @@
 package app.src.network;
 
+import app.src.server.*;
 import java.io.*;
 import java.net.*;
 
 public class ServerReceiver extends Receiver{
 
-  ClientThread client;
+  private ClientThread client;
 
   public ServerReceiver(ClientThread client){
     this.client = client;

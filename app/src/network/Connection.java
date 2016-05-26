@@ -5,9 +5,9 @@ import java.net.*;
 
 public class Connection{
 
-	Socket s;
-	PrintWriter out;
-	BufferedReader in;
+	private Socket s;
+	private PrintWriter out;
+	private BufferedReader in;
 
 	public Connection(Socket s){
 		try{

@@ -1,12 +1,12 @@
 package app.src.network;
 
-import app.src.*;
+import app.src.client.*;
 import java.io.*;
 import java.net.*;
 
 public class ClientReceiver extends Receiver{
 
-  Client c;
+  private Client c;
 
   public ClientReceiver(Client c){
     this.c = c;

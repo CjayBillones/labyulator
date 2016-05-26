@@ -1,1 +1,1 @@
-java app.src.Client
+java app.src.client.Client

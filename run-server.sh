@@ -1,1 +1,1 @@
-java app.src.Server
+java app.src.server.Server
