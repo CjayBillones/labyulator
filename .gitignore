@@ -1,2 +1,3 @@
 ./src/*.class
+./tests/*.class
 *.class
