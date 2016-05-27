@@ -64,19 +64,17 @@ public class Client{
   }
 
   public String inputNames(){
-    
-    String inputNames[] = new String[2];
-
-    for(int i = 0; i < inputNames.length; i++){
-      System.out.print("Enter name of person " + i + ": ");
-      inputNames[i] = sc.nextLine();
-    }
-
-    if(!validator.validateNames(inputNames[0], inputNames[1])){
-      System.out.println("ERROR: One or both of the input names is/are invalid.");
-      return null;
-    }
-  
+    System.out.print("Enter TWo Names Separated by a Comma:");
+    String input = sc.nextLine();
+    String inputNames[] = input.split(",");
+      if(inputNames.length != 2){
+        System.out.println("ERROR: One or both of the input names is/are invalid.");
+        return null;
+      }
+      else if(!validator.validateNames(inputNames[0], inputNames[1])){
+        System.out.println("ERROR: One or both of the input names is/are invalid.");
+        return null;        
+      }
     return (inputNames[0] + ";" + inputNames[1] + ";");
   }
 
